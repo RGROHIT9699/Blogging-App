@@ -1,0 +1,21 @@
+<% layout('layouts/boilerplate') %>
+<%- include('../partials/navbar') %>
+  
+
+<div class="row">
+        <% for(let item of blogs){ %>
+            <div class="col-lg-4 mt-3">
+                <div class="card shadow mx-auto" style="width: 18rem;">
+                    <img src="<%=item.image%>" class="card-img-top" alt="..`.">
+                    <div class="card-body">
+                      <h2 class="card-title"><%=item.name%></h2>
+                      <h5 class="card-title"><%=item.title%></h5>
+                      <p class="card-text"><%=item.desc%></p>
+                      <a href="/blogs/<%=item._id%>" class="btn btn-info">View Blog</a>
+                      
+                    </div>
+                </div>
+            </div>
+
+        <% } %>
+</div>

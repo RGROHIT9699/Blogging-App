@@ -1,0 +1,16 @@
+<% layout('layouts/boilerplate') %>
+<nav>
+    <div class="logo">BloggingSite</div>
+    <ul>
+        <li><a href="/blogs">Home</a></li>
+        <li><a href="/blog/new">New</a></li>
+        <div class="d-flex" role="search">
+          <% if(!currentUser){ %>
+            <a href="/login" class="nav-link mx-2">Login</a>
+          <% }  else{%>
+            <a href="#" class="nav-link mx-2">Hello <%=currentUser.username%></a>
+            <a href="/logout" class="nav-link mx-2">Logout</a>
+          <% } %>
+        </div>
+    </ul>
+</nav>
