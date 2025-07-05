@@ -19,7 +19,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/shopping-app',)
     })
     .catch((err) => {
         console.error("DB connection error:", err);
-    });
+});
 
 const sessionConfig = {
     secret: 'keyboard cat',
