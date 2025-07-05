@@ -1,3 +1,4 @@
+/* Reset and base */
 body, h1, p, input, button {
     margin: 0;
     padding: 0;
@@ -10,7 +11,7 @@ body {
     color: #333;
 }
 
-
+/* Navbar */
 nav {
     background: linear-gradient(135deg, #56ab2f, #a8e063);
     background-size: 200% 200%;
@@ -54,8 +55,9 @@ nav ul li a:hover {
     color: #333;
 }
 
-/* Container */
-.signin-container {
+/* Container (both login and signup) */
+.signin-container,
+.signup-container {
     background: #fff;
     padding: 2rem;
     max-width: 420px;
@@ -64,14 +66,16 @@ nav ul li a:hover {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
 }
 
-.signin-container h1 {
+.signin-container h1,
+.signup-container h1 {
     font-size: 2rem;
     margin-bottom: 0.3rem;
     text-align: center;
     font-weight: bold;
 }
 
-.signin-container p {
+.signin-container p,
+.signup-container p {
     font-size: 1rem;
     color: #555;
     text-align: center;
@@ -107,7 +111,8 @@ nav ul li a:hover {
 }
 
 /* Buttons */
-.signin-btn {
+.signin-btn,
+.signup-btn {
     width: 100%;
     padding: 0.9rem;
     background: linear-gradient(to right, #4caf50, #8bc34a);
@@ -120,12 +125,14 @@ nav ul li a:hover {
     transition: background 0.3s;
 }
 
-.signin-btn:hover {
+.signin-btn:hover,
+.signup-btn:hover {
     background: linear-gradient(to right, #43a047, #7cb342);
 }
 
-/* Bottom Link */
-.signup-link {
+/* Links */
+.signup-link,
+.login-link {
     font-size: 0.95rem;
     color: #4caf50;
     text-align: center;
@@ -135,23 +142,27 @@ nav ul li a:hover {
     transition: text-decoration 0.3s;
 }
 
-.signup-link:hover {
+.signup-link:hover,
+.login-link:hover {
     text-decoration: underline;
 }
 
 /* Responsive */
 @media (max-width: 480px) {
-    .signin-container {
+    .signin-container,
+    .signup-container {
         margin: 2rem 1rem;
         padding: 1.5rem;
     }
 
-    .signin-container h1 {
+    .signin-container h1,
+    .signup-container h1 {
         font-size: 1.6rem;
     }
 
     .form-group input,
-    .signin-btn {
+    .signin-btn,
+    .signup-btn {
         font-size: 1rem;
     }
 }

@@ -23,7 +23,8 @@
 
             <div class="mb-3">
                 <label for="desc">Description: </label>
-                <textarea class="form-control" name="desc" id="desc" rows="5" placeholder="Description of the product"><%=foundProduct.desc%></textarea>
+                <input name="desc" class="form-control" id="desc" rows="5" placeholder="Description of the note" value="<%=foundProduct.desc%>"></input>
+                <button type="button" id="record">🎤 Record</button>   
             </div>
 
             <button class="btn btn-sm btn-success" type="submit">Edit Blog</button>
@@ -31,3 +32,31 @@
         </form>
     </div>
 </div>
+
+
+<script>
+        const recordBtn = document.getElementById("record");
+        const noteInput = document.getElementById("desc");
+        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+        recognition.continuous = false;
+        recognition.lang = "en-US";
+    
+        recordBtn.addEventListener("click", () => {
+            if (recordBtn.innerText === "🎤 Record") {
+                recognition.start();
+                recordBtn.innerText = "🛑 Stop";
+            } else {
+                recognition.stop();
+                recordBtn.innerText = "🎤 Record";
+            }
+        });
+    
+        recognition.onresult = (event) => {
+            noteInput.value = event.results[0][0].transcript;
+        };
+    
+        recognition.onspeechend = () => {
+            recognition.stop();
+            recordBtn.innerText = "🎤 Record";
+        };
+</script>

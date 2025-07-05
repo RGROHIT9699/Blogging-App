@@ -1,28 +1,47 @@
 <% layout('layouts/boilerplate') %>
 
-<div class="row">
+<div class="signup-container">
+    <%- include('../partials/flash') %>
 
-    
-    <div class="signup-container">
-        <%- include('../partials/flash') %> 
-        <h1>Join Our Blog</h1>
-        <p>Create an account to start your blogging journey!</p>
-        <form id="signupForm" action="/register" method="POST">
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" placeholder="Enter your username" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required>
-            </div>
-            <button type="submit" class="signup-btn">Sign Up</button>
-        </form>
-        <a href="/login" class="login-link">Already have an account? Log in</a>
-    </div>
-    
+    <h1>Create Account</h1>
+    <p>Start your blogging journey today!</p>
+
+    <form id="signupForm" action="/register" method="POST">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input 
+                type="text" 
+                id="username" 
+                name="username" 
+                placeholder="Enter your username" 
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                placeholder="Enter your email" 
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input 
+                type="password" 
+                id="password" 
+                name="password" 
+                placeholder="Enter your password" 
+                required
+            >
+        </div>
+
+        <button type="submit" class="signup-btn">Sign Up</button>
+    </form>
+
+    <a href="/login" class="login-link">Already have an account? Log in</a>
 </div>
